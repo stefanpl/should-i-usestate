@@ -6,8 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "lint-base": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "npm run lint-base -- --max-warnings 0",
+    "lint-fix": "npm run lint-base -- --fix",
+    "prettify": "npx prettier --write .",
+    "typecheck": "npx tsc --noEmit",
+    "unit-test": "echo 'no unit tests implemented so far'",
+    "full-check": "npm run typecheck && npm run lint && npm run prettify && npm run test && echo \"✅ All good!\"",
+    "test": "npm run unit-test",
+    "prod": "npm run build",
+    "watch": "npm run dev",
+    "production": "npm run build",
+    "serve": "npm run start"
   },
   "dependencies": {
     "@emotion/cache": "latest",
