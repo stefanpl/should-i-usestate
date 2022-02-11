@@ -26,6 +26,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "@nvon/eslint-config": "^1.15.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
