@@ -1,7 +1,9 @@
-import * as React from 'react';
-import Link from '@mui/material/Link';
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
-import Typography from '@mui/material/Typography';
+// MUI default, and they are very small.
+/* eslint-disable react/no-multi-comp */
+import Link from "@mui/material/Link";
+import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
 
 function LightBulbIcon(props: SvgIconProps) {
   return (
@@ -11,12 +13,15 @@ function LightBulbIcon(props: SvgIconProps) {
   );
 }
 
-export default function ProTip() {
+export default function ProTip(): JSX.Element {
   return (
     <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">
-      <LightBulbIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
-      Pro tip: See more <Link href="https://mui.com/getting-started/templates/">templates</Link> on
-      the MUI documentation.
+      <LightBulbIcon sx={{ mr: 1, verticalAlign: "middle" }} />
+      Pro tip: See more{" "}
+      <Link href="https://mui.com/getting-started/templates/">
+        templates
+      </Link>{" "}
+      on the MUI documentation.
     </Typography>
   );
 }
