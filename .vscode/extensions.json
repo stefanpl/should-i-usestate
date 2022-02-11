@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
+    "christian-kohler.npm-intellisense",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "foxundermoon.shell-format",
+    "apollographql.vscode-apollo",
+    "stylelint.vscode-stylelint",
+    "yuanhjty.code-template-tool",
+    "natizyskunk.sftp"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: launch",
+      "type": "node",
+      "request": "launch",
+      "sourceMaps": true,
+      "program": "${workspaceFolder}/backend/dist/app.compiled.js",
+      "outFiles": ["${workspaceFolder}/backend/dist/app.compiled*"],
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
+      "name": "Backend: all ava tests",
+      "type": "node",
+      "request": "launch",
+      "sourceMaps": true,
+      "program": "${workspaceFolder}/backend/node_modules/.bin/ava",
+      "cwd": "${workspaceRoot}/backend",
+      "outputCapture": "std",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
+      "name": "Launch npm script",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceRoot}/common",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "codemod"]
+    },
+    {
+      "name": "common: all ava tests",
+      "type": "node",
+      "request": "launch",
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}/common",
+      "program": "node_modules/.bin/ava",
+      "outputCapture": "std",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"]
+    },
+    {
+      "name": "common: current ava test",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/common",
+      "program": "node_modules/.bin/ava",
+      "sourceMaps": true,
+      "args": ["${file}"],
+      "outputCapture": "std",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": ["<node_internals>/**", "common/node_modules/**"]
+    }
+  ]
+}
