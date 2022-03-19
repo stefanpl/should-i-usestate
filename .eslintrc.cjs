@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["@nvon/eslint-config/eslint-configs/nextjs.cjs"],
   settings: {
-    "import/core-modules": ["@emotion/cache", "clsx"],
+    "import/core-modules": ["@emotion/cache", "clsx", "@mui/system"],
   },
 };

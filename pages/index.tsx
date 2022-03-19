@@ -1,33 +1,18 @@
-import * as React from "react";
-import type { NextPage } from "next";
+import { Button, Paper } from "@mui/material";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Link from "../src/Link";
-import ProTip from "../src/ProTip";
-import Copyright from "../src/Copyright";
+import type { NextPage } from "next";
+import * as React from "react";
 
 const Home: NextPage = () => {
   return (
     <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom={true}>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        <Copyright />
-      </Box>
+      <Paper sx={{ p: 2, mt: 2, mb: 2 }}>
+        <Typography variant="h1">Hello World</Typography>
+        <Typography variant="h2">Now start creating</Typography>
+      </Paper>
+      <Button sx={{ mr: 2 }}>Primary</Button>
+      <Button color="secondary">Secondary</Button>
     </Container>
   );
 };
