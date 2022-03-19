@@ -2,6 +2,7 @@
   "name": "@nvon/nextjs-mui-starter",
   "version": "0.0.1",
   "private": true,
+  "type": "commonjs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +12,7 @@
     "lint-fix": "npm run lint-base -- --fix",
     "prettify": "npx prettier --write .",
     "typecheck": "npx tsc --noEmit",
+    "svg-component-generate": "bin/createSvgComponents.sh",
     "unit-test": "echo 'no unit tests implemented so far'",
     "full-check": "npm run typecheck && npm run lint && npm run prettify && npm run test && echo \"✅ All good!\"",
     "test": "npm run unit-test",
@@ -28,6 +30,8 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@nvon/eslint-config": "^1.15.2",
+    "@nvon/node-toolbox": "^0.11.1",
+    "@svgr/webpack": "^6.2.1",
     "@types/lodash-es": "^4.17.6",
     "lodash-es": "^4.17.21",
     "next": "latest",
@@ -35,6 +39,7 @@
     "react-dom": "latest"
   },
   "devDependencies": {
+    "ts-node": "^10.7.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "eslint": "latest",
