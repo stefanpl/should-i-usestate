@@ -31,6 +31,7 @@
     "@mui/material": "latest",
     "@nvon/eslint-config": "^1.15.2",
     "@nvon/node-toolbox": "^0.11.1",
+    "@nvon/react-toolbox": "^1.5.0",
     "@svgr/webpack": "^6.2.1",
     "@types/lodash-es": "^4.17.6",
     "lodash-es": "^4.17.21",
@@ -39,11 +40,11 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "ts-node": "^10.7.0",
     "@types/node": "latest",
     "@types/react": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "ts-node": "^10.7.0",
     "typescript": "latest"
   }
 }
