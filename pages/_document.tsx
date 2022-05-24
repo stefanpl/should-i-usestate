@@ -1,31 +1,67 @@
 import createEmotionServer from "@emotion/server/create-instance";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import * as React from "react";
+import { withEmotionCache } from "tss-react/nextJs";
 import createEmotionCache from "../src/createEmotionCache";
 import theme from "../src/theme";
 
+/**
+ * 💡
+ * This file is currently a merge between:
+ *
+ * - the MUI nextjs example:
+ *   https://github.com/mui/material-ui/tree/master/examples/nextjs
+ *
+ * - the tss-react MUI example:
+ *   https://docs.tss-react.dev/ssr/next.js
+ *
+ * Both, for themselves, do not SSR properly.
+ *
+ * When making adjustments here, be sure to check:
+ * - dev build is looking fine
+ * - production build is looking fine, with and without javascript
+ *
+ */
+
 // eslint-disable-next-line es/no-classes
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   render(): JSX.Element {
     return (
-      <Html lang="en">
+      <Html>
         <Head>
+          {/* PWA primary color */}
+
           <meta name="theme-color" content={theme.palette.primary.main} />
+
           <link rel="shortcut icon" href="/static/favicon.ico" />
+
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
+
           {
             (this.props as unknown as { emotionStyleTags: JSX.Element })
               .emotionStyleTags
           }
         </Head>
+
         <body>
           <Main />
+
           <NextScript />
         </body>
       </Html>
     );
   }
 }
+
+export default withEmotionCache({
+  // If you have a custom document pass it instead
+  Document: MyDocument,
+  /*
+   * Every emotion cache used in the app should be provided.
+   * Caches for MUI should use "prepend": true.
+   */
+  getCaches: () => [createEmotionCache()],
+});
 
 /*
  * `getInitialProps` belongs to `_document` (instead of `_app`),
