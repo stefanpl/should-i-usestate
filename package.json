@@ -4,6 +4,8 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
+    "postinstall": "npm run generate",
+    "generate": "npm run svg-component-generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
