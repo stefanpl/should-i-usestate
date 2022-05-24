@@ -1,10 +1,7 @@
-import createStyles from "@mui/styles/createStyles";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles } from "tss-react/mui";
 
-export const use___ComponentName___Styles = makeStyles((theme) =>
-  createStyles({
-    wrapper: {
-      marginTop: theme.spacing(0),
-    },
-  })
-);
+export const use___ComponentName___Styles = makeStyles({
+  name: "___ComponentName___",
+})((theme) => ({
+  wrapper: {},
+}));

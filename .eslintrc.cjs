@@ -12,5 +12,16 @@ module.exports = {
         "@typescript-eslint/no-unsafe-return": "off",
       },
     },
+    {
+      files: ["**/*Styles.ts"],
+      rules: {
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            args: "none",
+          },
+        ],
+      },
+    },
   ],
 };
