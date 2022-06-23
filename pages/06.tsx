@@ -1,8 +1,10 @@
 import BugReportIcon from "@mui/icons-material/BugReport";
-import { Box, Button, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Switch, Typography } from "@mui/material";
+import { toggle } from "@nvon/baseline";
 import type { NextPage } from "next";
 import { useCallback, useEffect, useState } from "react";
 import { DumbUnicornTextField } from "../src/components/02-molecules/DumbUnicornTextField/UnicornTextField";
+import { SadTextWithoutUnicorns } from "../src/components/02-molecules/SadTextWithoutUnicorns/SadTextWithoutUnicorns";
 import { usePageStyles } from "./usePageStyles";
 
 /**
@@ -71,6 +73,8 @@ const HelloWorldPage: NextPage = () => {
     getFeedbackText("")
   );
 
+  const [showPreview, setShowPreview] = useState<boolean>(false);
+
   const [isReadyToSubmit, setIsReadyToSubmit] = useState<boolean>(false);
 
   const setTextFieldValueEnhanced = useCallback((newValue: string): void => {
@@ -125,6 +129,16 @@ const HelloWorldPage: NextPage = () => {
             >
               Add bug
             </Button>
+            <Typography sx={{ mt: 4 }} variant="h5">
+              Unicorn-free preview
+              <Switch
+                checked={showPreview}
+                onChange={() => setShowPreview(toggle)}
+                name="loading"
+                color="primary"
+              />
+            </Typography>
+            {showPreview && <SadTextWithoutUnicorns text={textFieldValue} />}
           </Paper>
         </Grid>
       </Grid>
