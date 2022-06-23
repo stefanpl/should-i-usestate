@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import * as React from "react";
+import { PageLayout } from "../src/components/00-globals/PageLayout/PageLayout";
 import createEmotionCache from "../src/createEmotionCache";
 import theme from "../src/theme";
 
@@ -23,7 +24,9 @@ export default function MyApp(props: MyAppProps): JSX.Element {
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Component {...props.pageProps} />
+        <PageLayout>
+          <Component {...props.pageProps} />
+        </PageLayout>
       </ThemeProvider>
     </CacheProvider>
   );

@@ -1,7 +1,6 @@
 import "@fontsource/open-sans/300.css";
 import "@fontsource/open-sans/400.css";
 import "@fontsource/open-sans/800.css";
-import { colors } from "@mui/material";
 import {
   Breakpoint,
   Components,
@@ -20,10 +19,11 @@ const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: colors.teal[800],
+      main: "#f46524",
     },
     secondary: {
-      main: colors.orange[800],
+      main: "#50c6bc",
+      contrastText: "#fff",
     },
   },
   typography: {
@@ -33,6 +33,8 @@ const theme = createTheme({
     fontWeightBold,
     h1: {
       fontWeight: fontWeightLight,
+      marginBottom: "2rem",
+      fontSize: "3rem",
     },
     h2: {
       fontWeight: fontWeightBold,
@@ -54,6 +56,13 @@ const components: Components<DefaultTheme> = {
   MuiButton: {
     defaultProps: {
       variant: "contained",
+    },
+  },
+  MuiButtonGroup: {
+    styleOverrides: {
+      root: {
+        marginTop: "1rem",
+      },
     },
   },
 };
