@@ -31,6 +31,7 @@
     "@fontsource/open-sans": "^4.5.6",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "@nvon/baseline": "^0.26.1",
     "@nvon/eslint-config": "^1.15.2",
     "@nvon/node-toolbox": "^0.11.1",
     "@nvon/react-toolbox": "^1.5.0",

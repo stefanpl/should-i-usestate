@@ -58,8 +58,15 @@ const components: Components<DefaultTheme> = {
       root: {
         padding: "2rem",
         margin: "2rem",
-        height: "100%",
       },
+    },
+    defaultProps: {
+      elevation: 10,
+    },
+  },
+  MuiGrid: {
+    defaultProps: {
+      flex: 1,
     },
   },
   MuiAppBar: {

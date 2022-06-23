@@ -16,7 +16,7 @@ export const DumbUnicornTextField = (
   const { classes, cx } = useUnicornTextFieldStyles();
   const { textFieldValue, setTextFieldValue } = props;
 
-  const addUnicorn = () => setTextFieldValue(addUnicornToText);
+  const addUnicorn = () => setTextFieldValue(addUnicornToText(textFieldValue));
 
   return (
     <Box className={cx(classes.wrapper, props.className)}>
