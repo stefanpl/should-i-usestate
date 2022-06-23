@@ -5,4 +5,6 @@ import {
 
 export interface PageLayoutProps
   extends ComponentWithClassNameProps,
-    ComponentWithChildrenProps {}
+    ComponentWithChildrenProps {
+  showHeader: boolean;
+}

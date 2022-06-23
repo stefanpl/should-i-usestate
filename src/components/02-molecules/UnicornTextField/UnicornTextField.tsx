@@ -5,24 +5,20 @@ import {
   FormControl,
   FormHelperText,
   TextField,
-  Typography,
 } from "@mui/material";
-import type { NextPage } from "next";
-import * as React from "react";
-import { usePageStyles } from "./usePageStyles";
+import { useState } from "react";
+import { addUnicornToText } from "../../../helpers/addUnicornToText";
+import { UnicornTextFieldProps } from "./UnicornTextFieldInterfaces";
+import { useUnicornTextFieldStyles } from "./UnicornTextFieldStyles";
 
-const addUnicornToText = (text: string): string => `${text} 🦄`;
-
-const HelloWorldPage: NextPage = () => {
-  const [textFieldValue, setTextFieldValue] = React.useState<string>("");
-  const { classes } = usePageStyles();
+export const UnicornTextField = (props: UnicornTextFieldProps): JSX.Element => {
+  const { classes, cx } = useUnicornTextFieldStyles();
+  const [textFieldValue, setTextFieldValue] = useState<string>("");
 
   const addUnicorn = () => setTextFieldValue(addUnicornToText);
 
   return (
-    <Box className={classes.wrapper}>
-      <Typography variant="h1">Single source of truth</Typography>
-
+    <Box className={cx(classes.wrapper, props.className)}>
       <FormControl>
         <TextField
           multiline={true}
@@ -45,5 +41,3 @@ const HelloWorldPage: NextPage = () => {
     </Box>
   );
 };
-
-export default HelloWorldPage;

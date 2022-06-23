@@ -53,6 +53,22 @@ const components: Components<DefaultTheme> = {
   MuiTypography: {
     styleOverrides: {},
   },
+  MuiPaper: {
+    styleOverrides: {
+      root: {
+        padding: "2rem",
+        margin: "2rem",
+        height: "100%",
+      },
+    },
+  },
+  MuiAppBar: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+      },
+    },
+  },
   MuiButton: {
     defaultProps: {
       variant: "contained",
