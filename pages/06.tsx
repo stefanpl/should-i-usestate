@@ -1,8 +1,18 @@
+import BugReportIcon from "@mui/icons-material/BugReport";
 import { Box, Button, Grid, Paper, Typography } from "@mui/material";
 import type { NextPage } from "next";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { DumbUnicornTextField } from "../src/components/02-molecules/DumbUnicornTextField/UnicornTextField";
 import { usePageStyles } from "./usePageStyles";
+
+/**
+ * 🚨
+ *
+ * There are multiple propblems within this page that should be taken care of.
+ *
+ * This is not "copy-paste-code" meant for using anywhere else.
+ *
+ */
 
 interface TextLengthFeedback {
   minLenght: number;
@@ -63,15 +73,19 @@ const HelloWorldPage: NextPage = () => {
 
   const [isReadyToSubmit, setIsReadyToSubmit] = useState<boolean>(false);
 
-  const setTextFieldValueEnhanced = (newValue: string): void => {
+  const setTextFieldValueEnhanced = useCallback((newValue: string): void => {
     setTextFieldValue(newValue);
     setEvaluationText(getFeedbackText(newValue));
-  };
+  }, []);
 
   useEffect(() => {
     const canBeSubmitted = textCanBeSubmitted(textFieldValue);
 
     setIsReadyToSubmit(canBeSubmitted);
+  }, [textFieldValue]);
+
+  const addSomeBug = useCallback(() => {
+    setTextFieldValue(textFieldValue + " 🐞");
   }, [textFieldValue]);
 
   // Nevermind this
@@ -102,6 +116,15 @@ const HelloWorldPage: NextPage = () => {
               You have entered {textFieldValue.length} characters.
             </Typography>
             <Typography variant="h5">{evaluationText}</Typography>
+
+            <Button
+              sx={{ mt: 2 }}
+              variant="outlined"
+              onClick={addSomeBug}
+              endIcon={<BugReportIcon />}
+            >
+              Add bug
+            </Button>
           </Paper>
         </Grid>
       </Grid>

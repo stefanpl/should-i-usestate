@@ -69,16 +69,21 @@ const components: Components<DefaultTheme> = {
       flex: 1,
     },
   },
+  MuiButton: {
+    defaultProps: {
+      variant: "contained",
+    },
+    styleOverrides: {
+      root: {
+        cursor: "pointer",
+      },
+    },
+  },
   MuiAppBar: {
     styleOverrides: {
       root: {
         padding: 0,
       },
-    },
-  },
-  MuiButton: {
-    defaultProps: {
-      variant: "contained",
     },
   },
   MuiButtonGroup: {
